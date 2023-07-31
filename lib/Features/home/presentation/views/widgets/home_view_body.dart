@@ -49,7 +49,7 @@ class HomeViewBody extends StatelessWidget {
           const SizedBox(height: 25),
           const Text('Categories', style: Styles.textStyle16),
           const SizedBox(height: 15),
-          const Categories(),
+          const CategoriesList(),
         ],
       ),
     );

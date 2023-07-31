@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/core/utils/styles.dart';
 
+import 'catgories.dart';
 import 'catgories_view.dart';
 
-class Categories extends StatefulWidget {
-  const Categories({
+class CategoriesList extends StatefulWidget {
+  const CategoriesList({
     super.key,
   });
 
   @override
-  State<Categories> createState() => _CategoriesState();
+  State<CategoriesList> createState() => _CategoriesListState();
 }
 
-class _CategoriesState extends State<Categories> with TickerProviderStateMixin {
+class _CategoriesListState extends State<CategoriesList>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController? tabController = TabController(length: 5, vsync: this);
@@ -48,47 +49,6 @@ class _CategoriesState extends State<Categories> with TickerProviderStateMixin {
           ),
         ),
       ],
-    );
-  }
-}
-
-class Catgories extends StatelessWidget {
-  const Catgories({
-    super.key,
-    required this.tabController,
-  });
-
-  final TabController? tabController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: TabBar(
-        labelPadding: EdgeInsets.zero,
-        indicatorPadding: const EdgeInsets.symmetric(horizontal: 10.5),
-        indicator: const BoxDecoration(
-          color: Color(0xFF63A1FF),
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10),
-            topLeft: Radius.circular(10),
-          ),
-        ),
-        controller: tabController,
-        tabs: const [
-          Tab(child: Text('👕', style: Styles.textStyle24)),
-          Tab(child: Text('👖', style: Styles.textStyle24)),
-          Tab(child: Text('👞', style: Styles.textStyle24)),
-          Tab(child: Text('👒', style: Styles.textStyle24)),
-          Tab(
-            child: SizedBox(
-                width: 48,
-                height: 48,
-                child: Center(child: Text('⌚', style: Styles.textStyle24))),
-          )
-        ],
-      ),
     );
   }
 }
